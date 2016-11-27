@@ -1,0 +1,29 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="job" class="ru.sbt.bit.ood.hw1.model.TradesJob" init-method="run">
+        <constructor-arg ref="dao">
+        </constructor-arg>
+
+        <constructor-arg ref="parser">
+        </constructor-arg>
+
+        <constructor-arg ref="downloaderFTP">
+        </constructor-arg>
+    </bean>
+
+    <bean id="downloaderHTTP" class="ru.sbt.bit.ood.hw1.realization.DownloadHTTP">
+    </bean>
+
+    <bean id="downloaderFTP" class="ru.sbt.bit.ood.hw1.realization.DownloadFTP">
+    </bean>
+
+    <bean id="parser" class="ru.sbt.bit.ood.hw1.realization.CSVParser">
+    </bean>
+
+    <bean id="dao" class="ru.sbt.bit.ood.hw1.realization.TradesDAOImpl">
+    </bean>
+
+</beans>
